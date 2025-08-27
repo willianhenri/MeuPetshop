@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "GInAbGspbi79cKelHEVhFq4rQQ5rhZIc824V0930k50=",
+  "Source": "MeuPetshop.Api",
+  "BasePath": "_content/MeuPetshop.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
