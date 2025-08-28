@@ -1,6 +1,9 @@
 ﻿using MeuPetshop.Domain.Dtos;
+using MeuPetshop.Domain.Dtos.ProdutoDto;
 using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetShop.Domain.Interfaces.IProdutos;
+using MeuPetShop.Domain.Shared;
 
 namespace MeuPetshop.Application.Services;
 
@@ -42,17 +45,24 @@ public class ProdutoServices : IProdutoService
         return new ProdutoDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.DateAdded);
     }
 
-    public async Task<IEnumerable<ProdutoDto>> GetAllProductsAsync()
+    public async Task<PagedApiResponse<ProdutoDto>> GetAllProductsAsync(int pageNumber, int pageSize)
     {
-        var products = await _produtoRepository.GetAllAsync();
-        var productDtos = new List<ProdutoDto>();
-
-        foreach (var product in products)
+        var totalCount = await _produtoRepository.CountAsync();
+        var products = await _produtoRepository.GetAllPagedAsync(pageNumber, pageSize);
+        
+        var productDtos = products.Select(p => new ProdutoDto(p.Id, p.Name, p.Description, p.Price, p.StockQuantity, p.DateAdded));
+        var response = new PagedApiResponse<ProdutoDto>
         {
-            productDtos.Add(new ProdutoDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.DateAdded));
-            
-        }
-        return productDtos;
+            Data = productDtos,
+            Pagination = new PaginationData
+            {
+                CurrentPage = pageNumber,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize)
+            }
+        };
+        return response;
     }
 
     public async Task<ProdutoDto?> UpdateProductAsync(int id, UpdateProdutoDto productDto)

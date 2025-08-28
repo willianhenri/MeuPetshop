@@ -1,5 +1,6 @@
 using MeuPetshop.Application.Services;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetShop.Domain.Interfaces.IProdutos;
 using MeuPetshop.Infrastructure.Data;
 using MeuPetshop.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;

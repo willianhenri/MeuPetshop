@@ -1,5 +1,6 @@
 ﻿using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetShop.Domain.Interfaces.IProdutos;
 using MeuPetshop.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,4 +54,18 @@ public class ProdutoRepository : IProdutoRepository
         _context.Produtos.Remove(product);
         await _context.SaveChangesAsync();
     }
+    
+    public async Task<int> CountAsync()
+    {
+        return await _context.Produtos.CountAsync();
+    }
+
+    public async Task<IEnumerable<Produto>> GetAllPagedAsync(int pageNumber, int pageSize)
+    {
+        return await _context.Produtos
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+    }
+    
 }

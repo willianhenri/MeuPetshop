@@ -1,6 +1,9 @@
 ﻿using MeuPetshop.Domain.Dtos;
+using MeuPetshop.Domain.Dtos.ProdutoDto;
 using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetShop.Domain.Interfaces.IProdutos;
+using MeuPetShop.Domain.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,10 +21,10 @@ public class ProdutosController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Produto>>> GetProdutos()
+    public async Task<ActionResult<PagedApiResponse<ProdutoDto>>> GetAllPagedAsync([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
     {
-        var produtos = await _produtoService.GetAllProductsAsync();
-        return Ok(produtos);
+        var response = await _produtoService.GetAllProductsAsync(pageNumber, pageSize);
+        return Ok(response);
     }
 
     [HttpGet("{id:int}")]

@@ -1,6 +1,6 @@
 ﻿using MeuPetShop.Domain.Entities;
 
-namespace MeuPetShop.Domain.Interfaces;
+namespace MeuPetShop.Domain.Interfaces.IProdutos;
 
 public interface IProdutoRepository
 {
@@ -11,4 +11,6 @@ public interface IProdutoRepository
     Task<Produto?> GetByNameAsync(string name);
     Task UpdateAsync(Produto product);
     Task DeleteAsync(Produto product);
+    Task<IEnumerable<Produto>> GetAllPagedAsync(int pageNumber, int pageSize);
+    Task<int> CountAsync();
 }
