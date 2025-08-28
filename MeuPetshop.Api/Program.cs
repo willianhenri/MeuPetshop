@@ -11,7 +11,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseNpgsql(connectionString));
 builder.Services.AddScoped<IProdutoService, ProdutoServices>();
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>(); // TODO: Fazer o ProdutoRepository
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>(); // 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

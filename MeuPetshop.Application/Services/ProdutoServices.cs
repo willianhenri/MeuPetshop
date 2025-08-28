@@ -32,7 +32,7 @@ public class ProdutoServices : IProdutoService
         
         await _produtoRepository.AddAsync(newProduct);
         
-        return new ProdutoDto(newProduct.Id, newProduct.Name, newProduct.Description, newProduct.Price, newProduct.StockQuantity, newProduct.DateAdded);
+        return new ProdutoDto(newProduct);
     }
 
     public async Task<ProdutoDto?> GetProductByIdAsync(int id)

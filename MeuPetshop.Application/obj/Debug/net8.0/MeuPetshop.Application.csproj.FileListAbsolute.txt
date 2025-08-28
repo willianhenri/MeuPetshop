@@ -13,3 +13,4 @@ C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetshop.Application\obj\Debug\net
 C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetshop.Application\obj\Debug\net8.0\refint\MeuPetshop.Application.dll
 C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetshop.Application\obj\Debug\net8.0\MeuPetshop.Application.pdb
 C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetshop.Application\obj\Debug\net8.0\ref\MeuPetshop.Application.dll
+C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetshop.Application\obj\Debug\net8.0\MeuPetshop.Application.sourcelink.json

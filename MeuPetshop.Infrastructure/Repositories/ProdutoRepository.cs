@@ -1,42 +1,56 @@
 ﻿using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetshop.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeuPetshop.Infrastructure.Repositories;
 
 public class ProdutoRepository : IProdutoRepository
 {
-    public Task AddAsync(Produto product)
+    private readonly AppDbContext _context;
+
+    public ProdutoRepository(AppDbContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+    
+    public async Task AddAsync(Produto product)
+    {
+        await _context.Produtos.AddAsync(product);
+        await _context.SaveChangesAsync();
     }
 
-    public Task<Produto?> GetByIdAsync(int id)
+    public async Task<Produto?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Produtos.FindAsync(id);
     }
 
-    public Task<IEnumerable<Produto>> GetAllAsync()
+    public async Task<IEnumerable<Produto>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Produtos.ToListAsync();
     }
 
-    public Task<IEnumerable<Produto>> GetByStockQuantityAsync(int stockQuantity)
+    public async Task<IEnumerable<Produto>> GetByStockQuantityAsync(int stockQuantity)
     {
-        throw new NotImplementedException();
+        return await _context.Produtos
+            .Where(p => p.StockQuantity == stockQuantity)
+            .ToListAsync();
     }
 
-    public Task<Produto?> GetByNameAsync(string name)
+    public async Task<Produto?> GetByNameAsync(string name)
     {
-        throw new NotImplementedException();
+        return await _context.Produtos.FirstOrDefaultAsync(p => p.Name == name);
     }
 
-    public Task UpdateAsync(Produto product)
+    public async Task UpdateAsync(Produto product)
     {
-        throw new NotImplementedException();
+        _context.Produtos.Update(product);
+        await _context.SaveChangesAsync();
     }
 
-    public Task DeleteAsync(Produto product)
+    public async Task DeleteAsync(Produto product)
     {
-        throw new NotImplementedException();
+        _context.Produtos.Remove(product);
+        await _context.SaveChangesAsync();
     }
 }
