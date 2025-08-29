@@ -1,6 +1,6 @@
 ﻿namespace MeuPetShop.Domain.Entities;
 
-public class Produto
+public class Product
 {
     public int Id { get; set; }
     public string Name { get; set; }

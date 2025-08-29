@@ -1,4 +1,4 @@
-﻿using MeuPetShop.Domain.Interfaces.IProdutos;
+﻿using MeuPetShop.Domain.Interfaces.IProducts;
 
 namespace MeuPetShop.Domain.Shared;
 

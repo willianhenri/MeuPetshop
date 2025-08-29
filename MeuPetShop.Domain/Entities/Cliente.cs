@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MeuPetShop.Domain.Entities
 {
-    public class Cliente
+    public class Client
     {
         public int Id { get; set; }
         public string Name { get; set; }

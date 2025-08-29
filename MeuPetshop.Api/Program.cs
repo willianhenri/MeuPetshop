@@ -1,6 +1,6 @@
 using MeuPetshop.Application.Services;
 using MeuPetShop.Domain.Interfaces;
-using MeuPetShop.Domain.Interfaces.IProdutos;
+using MeuPetShop.Domain.Interfaces.IProducts;
 using MeuPetshop.Infrastructure.Data;
 using MeuPetshop.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -11,8 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseNpgsql(connectionString));
-builder.Services.AddScoped<IProdutoService, ProdutoServices>();
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>(); // 
+builder.Services.AddScoped<IProductService, ProductServices>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>(); // 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

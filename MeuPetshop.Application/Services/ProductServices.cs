@@ -2,56 +2,56 @@
 using MeuPetshop.Domain.Dtos.ProdutoDto;
 using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
-using MeuPetShop.Domain.Interfaces.IProdutos;
+using MeuPetShop.Domain.Interfaces.IProducts;
 using MeuPetShop.Domain.Shared;
 
 namespace MeuPetshop.Application.Services;
 
-public class ProdutoServices : IProdutoService
+public class ProductServices : IProductService
 {
-    private readonly IProdutoRepository _produtoRepository;
+    private readonly IProductRepository _produtoRepository;
 
-    public ProdutoServices(IProdutoRepository produtoRepository)
+    public ProductServices(IProductRepository produtoRepository)
     {
         _produtoRepository = produtoRepository;
     }
     
-    public async Task<ProdutoDto> CreateProductAsync(CreateProdutoDto produtoDto)
+    public async Task<ProductDto> CreateProductAsync(CreateProductDto productDto)
     {
-        if(produtoDto == null) throw new ArgumentNullException(nameof(produtoDto));
-        if (string.IsNullOrWhiteSpace(produtoDto.Name)) throw new ArgumentException("O nome do produto não pode ser vazio");
+        if(productDto == null) throw new ArgumentNullException(nameof(productDto));
+        if (string.IsNullOrWhiteSpace(productDto.Name)) throw new ArgumentException("O nome do produto não pode ser vazio");
         
-        var existingProduct = await _produtoRepository.GetByNameAsync(produtoDto.Name);
-        if(existingProduct != null) throw new InvalidOperationException($"Produto {produtoDto.Name} já existe");
+        var existingProduct = await _produtoRepository.GetByNameAsync(productDto.Name);
+        if(existingProduct != null) throw new InvalidOperationException($"Produto {productDto.Name} já existe");
 
-        var newProduct = new Produto
+        var newProduct = new Product
         {
-            Name = produtoDto.Name,
-            Description = produtoDto.Description,
-            Price = produtoDto.Price,
-            StockQuantity = produtoDto.StockQuantity,
+            Name = productDto.Name,
+            Description = productDto.Description,
+            Price = productDto.Price,
+            StockQuantity = productDto.StockQuantity,
             DateAdded = DateTime.UtcNow
         };
         
         await _produtoRepository.AddAsync(newProduct);
         
-        return new ProdutoDto(newProduct);
+        return new ProductDto(newProduct);
     }
 
-    public async Task<ProdutoDto?> GetProductByIdAsync(int id)
+    public async Task<ProductDto?> GetProductByIdAsync(int id)
     {
         var product = await _produtoRepository.GetByIdAsync(id);
         if(product == null) return null;
-        return new ProdutoDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.DateAdded);
+        return new ProductDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.DateAdded);
     }
 
-    public async Task<PagedApiResponse<ProdutoDto>> GetAllProductsAsync(int pageNumber, int pageSize)
+    public async Task<PagedApiResponse<ProductDto>> GetAllProductsAsync(int pageNumber, int pageSize)
     {
         var totalCount = await _produtoRepository.CountAsync();
         var products = await _produtoRepository.GetAllPagedAsync(pageNumber, pageSize);
         
-        var productDtos = products.Select(p => new ProdutoDto(p.Id, p.Name, p.Description, p.Price, p.StockQuantity, p.DateAdded));
-        var response = new PagedApiResponse<ProdutoDto>
+        var productDtos = products.Select(p => new ProductDto(p.Id, p.Name, p.Description, p.Price, p.StockQuantity, p.DateAdded));
+        var response = new PagedApiResponse<ProductDto>
         {
             Data = productDtos,
             Pagination = new PaginationData
@@ -65,7 +65,7 @@ public class ProdutoServices : IProdutoService
         return response;
     }
 
-    public async Task<ProdutoDto?> UpdateProductAsync(int id, UpdateProdutoDto productDto)
+    public async Task<ProductDto?> UpdateProductAsync(int id, UpdateProductDto productDto)
     {
         if(productDto == null) throw new ArgumentNullException(nameof(productDto));
         
@@ -78,7 +78,7 @@ public class ProdutoServices : IProdutoService
         productToUpdate.StockQuantity = productDto.StockQuantity;
         
         await _produtoRepository.UpdateAsync(productToUpdate);
-        return new ProdutoDto(productToUpdate.Id, productToUpdate.Name, productToUpdate.Description, productToUpdate.Price, productToUpdate.StockQuantity, productToUpdate.DateAdded);
+        return new ProductDto(productToUpdate.Id, productToUpdate.Name, productToUpdate.Description, productToUpdate.Price, productToUpdate.StockQuantity, productToUpdate.DateAdded);
         
         
     }
