@@ -1,15 +1,3 @@
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\bin\Debug\net8.0\MeuPetShop.Domain.deps.json
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\bin\Debug\net8.0\MeuPetShop.Domain.dll
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\bin\Debug\net8.0\MeuPetShop.Domain.pdb
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.AssemblyInfoInputs.cache
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.AssemblyInfo.cs
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.csproj.CoreCompileInputs.cache
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.dll
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\refint\MeuPetShop.Domain.dll
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.pdb
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\ref\MeuPetShop.Domain.dll
-C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.sourcelink.json
 H:\MeuPetshop\MeuPetShop.Domain\bin\Debug\net8.0\MeuPetShop.Domain.deps.json
 H:\MeuPetshop\MeuPetShop.Domain\bin\Debug\net8.0\MeuPetShop.Domain.dll
 H:\MeuPetshop\MeuPetShop.Domain\bin\Debug\net8.0\MeuPetShop.Domain.pdb

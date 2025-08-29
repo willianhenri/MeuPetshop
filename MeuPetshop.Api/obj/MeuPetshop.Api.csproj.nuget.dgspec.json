@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "H:\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj": {}
+    "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj": {}
   },
   "projects": {
-    "H:\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj": {
+    "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj",
+        "projectUniqueName": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj",
         "projectName": "MeuPetshop.Api",
-        "projectPath": "H:\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj",
-        "packagesPath": "C:\\Users\\72401621\\.nuget\\packages\\",
-        "outputPath": "H:\\MeuPetshop\\MeuPetshop.Api\\obj\\",
+        "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Api\\MeuPetshop.Api.csproj",
+        "packagesPath": "C:\\Users\\wh341\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\72401621\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wh341\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj": {
-                "projectPath": "H:\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj"
+              "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj": {
+                "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj"
               },
-              "H:\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj": {
-                "projectPath": "H:\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj"
+              "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj"
               }
             }
           }
@@ -89,21 +93,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj": {
+    "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj",
+        "projectUniqueName": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj",
         "projectName": "MeuPetshop.Application",
-        "projectPath": "H:\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj",
-        "packagesPath": "C:\\Users\\72401621\\.nuget\\packages\\",
-        "outputPath": "H:\\MeuPetshop\\MeuPetshop.Application\\obj\\",
+        "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Application\\MeuPetshop.Application.csproj",
+        "packagesPath": "C:\\Users\\wh341\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\72401621\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wh341\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,8 +125,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj": {
-                "projectPath": "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj"
+              "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj": {
+                "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj"
               }
             }
           }
@@ -154,21 +162,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj": {
+    "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj",
         "projectName": "MeuPetShop.Domain",
-        "projectPath": "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj",
-        "packagesPath": "C:\\Users\\72401621\\.nuget\\packages\\",
-        "outputPath": "H:\\MeuPetshop\\MeuPetShop.Domain\\obj\\",
+        "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj",
+        "packagesPath": "C:\\Users\\wh341\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\72401621\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wh341\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -215,21 +227,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj": {
+    "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj",
         "projectName": "MeuPetshop.Infrastructure",
-        "projectPath": "H:\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\72401621\\.nuget\\packages\\",
-        "outputPath": "H:\\MeuPetshop\\MeuPetshop.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\wh341\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\72401621\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wh341\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -243,8 +259,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj": {
-                "projectPath": "H:\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj"
+              "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj": {
+                "projectPath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetShop.Domain\\MeuPetShop.Domain.csproj"
               }
             }
           }
@@ -302,7 +318,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
