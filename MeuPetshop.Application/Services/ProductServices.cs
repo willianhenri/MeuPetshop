@@ -9,11 +9,11 @@ namespace MeuPetshop.Application.Services;
 
 public class ProductServices : IProductService
 {
-    private readonly IProductRepository _produtoRepository;
+    private readonly IProductRepository _productRepository;
 
-    public ProductServices(IProductRepository produtoRepository)
+    public ProductServices(IProductRepository productRepository)
     {
-        _produtoRepository = produtoRepository;
+        _productRepository = productRepository;
     }
     
     public async Task<ProductDto> CreateProductAsync(CreateProductDto productDto)
@@ -21,7 +21,7 @@ public class ProductServices : IProductService
         if(productDto == null) throw new ArgumentNullException(nameof(productDto));
         if (string.IsNullOrWhiteSpace(productDto.Name)) throw new ArgumentException("O nome do produto não pode ser vazio");
         
-        var existingProduct = await _produtoRepository.GetByNameAsync(productDto.Name);
+        var existingProduct = await _productRepository.GetByNameAsync(productDto.Name);
         if(existingProduct != null) throw new InvalidOperationException($"Produto {productDto.Name} já existe");
 
         var newProduct = new Product
@@ -33,22 +33,22 @@ public class ProductServices : IProductService
             DateAdded = DateTime.UtcNow
         };
         
-        await _produtoRepository.AddAsync(newProduct);
+        await _productRepository.AddAsync(newProduct);
         
         return new ProductDto(newProduct);
     }
 
     public async Task<ProductDto?> GetProductByIdAsync(int id)
     {
-        var product = await _produtoRepository.GetByIdAsync(id);
+        var product = await _productRepository.GetByIdAsync(id);
         if(product == null) return null;
         return new ProductDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.DateAdded);
     }
 
     public async Task<PagedApiResponse<ProductDto>> GetAllProductsAsync(int pageNumber, int pageSize)
     {
-        var totalCount = await _produtoRepository.CountAsync();
-        var products = await _produtoRepository.GetAllPagedAsync(pageNumber, pageSize);
+        var totalCount = await _productRepository.CountAsync();
+        var products = await _productRepository.GetAllPagedAsync(pageNumber, pageSize);
         
         var productDtos = products.Select(p => new ProductDto(p.Id, p.Name, p.Description, p.Price, p.StockQuantity, p.DateAdded));
         var response = new PagedApiResponse<ProductDto>
@@ -69,7 +69,7 @@ public class ProductServices : IProductService
     {
         if(productDto == null) throw new ArgumentNullException(nameof(productDto));
         
-        var productToUpdate = await _produtoRepository.GetByIdAsync(id);
+        var productToUpdate = await _productRepository.GetByIdAsync(id);
         if(productToUpdate == null) return null;
         
         productToUpdate.Name = productDto.Name;
@@ -77,7 +77,7 @@ public class ProductServices : IProductService
         productToUpdate.Price = productDto.Price;
         productToUpdate.StockQuantity = productDto.StockQuantity;
         
-        await _produtoRepository.UpdateAsync(productToUpdate);
+        await _productRepository.UpdateAsync(productToUpdate);
         return new ProductDto(productToUpdate.Id, productToUpdate.Name, productToUpdate.Description, productToUpdate.Price, productToUpdate.StockQuantity, productToUpdate.DateAdded);
         
         
@@ -85,9 +85,9 @@ public class ProductServices : IProductService
 
     public async Task<bool> DeleteProductAsync(int id)
     {
-        var productToDelete = await _produtoRepository.GetByIdAsync(id);
+        var productToDelete = await _productRepository.GetByIdAsync(id);
         if(productToDelete == null) return false;
-        await _produtoRepository.DeleteAsync(productToDelete);
+        await _productRepository.DeleteAsync(productToDelete);
         return true;
     }
 }
