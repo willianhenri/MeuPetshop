@@ -1,5 +1,7 @@
 using MeuPetshop.Application.Services;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetShop.Domain.Interfaces.IClients;
+using MeuPetShop.Domain.Interfaces.IPets;
 using MeuPetShop.Domain.Interfaces.IProducts;
 using MeuPetshop.Infrastructure.Data;
 using MeuPetshop.Infrastructure.Repositories;
@@ -12,7 +14,11 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseNpgsql(connectionString));
 builder.Services.AddScoped<IProductService, ProductServices>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>(); // 
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IClientService, ClientServices>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IPetService, PetServices>();
+builder.Services.AddScoped<IPetRepository, PetRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

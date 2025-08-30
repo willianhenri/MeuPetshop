@@ -1,6 +1,6 @@
 ﻿
 using MeuPetshop.Domain.Dtos;
-using MeuPetshop.Domain.Dtos.ProdutoDto;
+using MeuPetshop.Domain.Dtos.ProductDtos;
 using MeuPetShop.Domain.Shared;
 
 namespace MeuPetShop.Domain.Interfaces.IProducts;

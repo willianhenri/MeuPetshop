@@ -63,7 +63,7 @@ namespace MeuPetshop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("ClientId")
+                    b.Property<int>("ClientId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
@@ -111,7 +111,9 @@ namespace MeuPetshop.Infrastructure.Migrations
                 {
                     b.HasOne("MeuPetShop.Domain.Entities.Client", null)
                         .WithMany("Pets")
-                        .HasForeignKey("ClientId");
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MeuPetShop.Domain.Entities.Client", b =>

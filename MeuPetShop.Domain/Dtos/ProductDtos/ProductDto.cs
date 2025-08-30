@@ -1,6 +1,6 @@
 ﻿using MeuPetShop.Domain.Entities;
 
-namespace MeuPetshop.Domain.Dtos.ProdutoDto;
+namespace MeuPetshop.Domain.Dtos.ProductDtos;
 
 public record ProductDto(int Id, string Name, string Description, decimal Preco, int StockQuantity, DateTime DateAdded)
 {

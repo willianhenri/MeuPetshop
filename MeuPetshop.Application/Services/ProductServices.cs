@@ -1,5 +1,5 @@
 ﻿using MeuPetshop.Domain.Dtos;
-using MeuPetshop.Domain.Dtos.ProdutoDto;
+using MeuPetshop.Domain.Dtos.ProductDtos;
 using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
 using MeuPetShop.Domain.Interfaces.IProducts;

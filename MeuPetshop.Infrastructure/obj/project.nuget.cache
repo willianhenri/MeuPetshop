@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hxwb+l4xLoI=",
+  "dgSpecHash": "iWS4zFjYihQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\wh341\\Documents\\estudos\\MeuPetshop\\MeuPetshop.Infrastructure\\MeuPetshop.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.8\\microsoft.extensions.configuration.abstractions.9.0.8.nupkg.sha512",
     "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.8\\microsoft.extensions.configuration.fileextensions.9.0.8.nupkg.sha512",
     "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.8\\microsoft.extensions.configuration.json.9.0.8.nupkg.sha512",
+    "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\9.0.8\\microsoft.extensions.configuration.usersecrets.9.0.8.nupkg.sha512",
     "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\wh341\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.0\\microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
