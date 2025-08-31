@@ -50,7 +50,8 @@ public class PetServices : IPetService
         {
             Name = petDto.Name,
             Breed = petDto.Breed,
-            ClientId = clientId
+            ClientId = clientId,
+            Specie = petDto.Specie,
         };
 
         await _petRepository.AddAsync(newPet);

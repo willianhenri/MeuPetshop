@@ -1,8 +1,11 @@
 using MeuPetshop.Application.Services;
+using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
+using MeuPetShop.Domain.Interfaces.IAppointment;
 using MeuPetShop.Domain.Interfaces.IClients;
 using MeuPetShop.Domain.Interfaces.IPets;
 using MeuPetShop.Domain.Interfaces.IProducts;
+using MeuPetShop.Domain.Interfaces.IService;
 using MeuPetshop.Infrastructure.Data;
 using MeuPetshop.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +22,10 @@ builder.Services.AddScoped<IClientService, ClientServices>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<IPetService, PetServices>();
 builder.Services.AddScoped<IPetRepository, PetRepository>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
