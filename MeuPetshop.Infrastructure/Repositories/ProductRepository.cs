@@ -68,4 +68,19 @@ public class ProductRepository : IProductRepository
             .ToListAsync();
     }
     
+    public async Task<(IEnumerable<Product> Products, int TotalCount)> SearchByNameAsync(string searchTerm, int pageNumber, int pageSize)
+    {
+        var searchTermLower = searchTerm.ToLower();
+        
+        var query = _context.Products.Where(p => p.Name.ToLower().Contains(searchTermLower));
+
+        var totalCount = await query.CountAsync();
+
+        var products = await query.Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+
+        return (products, totalCount);
+    }
 }

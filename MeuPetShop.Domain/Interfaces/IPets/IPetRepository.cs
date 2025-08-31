@@ -9,4 +9,6 @@ public interface IPetRepository
     Task<IEnumerable<Pet>> GetAllByClientIdAsync(int clientId);
     Task UpdateAsync(Pet pet);
     Task DeleteAsync(Pet pet);
+    Task<int> CountAsync();
+    Task<(IEnumerable<Pet> Pets, int TotalCount)> GetAllAsync(int pageNumber, int pageSize);
 }

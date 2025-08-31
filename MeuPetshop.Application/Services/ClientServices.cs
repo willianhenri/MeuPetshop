@@ -74,7 +74,7 @@ public class ClientServices : IClientService
     
     private ClientDto MapClientToDto(Client client)
     {
-        var petsDto = client.Pets?.Select(pet => new PetDto(pet.Id, pet.Name, pet.Breed, pet.ClientId)).ToList() 
+        var petsDto = client.Pets?.Select(pet => new PetDto(pet.Id, pet.Name, pet.Breed, pet.Specie, pet.ClientId)).ToList() 
                       ?? new List<PetDto>();
 
         return new ClientDto(client.Id, client.Name, client.Phone, client.Email, client.Address, petsDto);

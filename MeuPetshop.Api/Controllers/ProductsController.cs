@@ -35,6 +35,25 @@ public class ProductsController : ControllerBase
         return Ok(produto);
     }
 
+    [HttpGet("search")]
+    public async Task<ActionResult<PagedApiResponse<ProductDto>>> SearchProducts(
+        [FromQuery] string term, 
+        [FromQuery] int pageNumber = 1, 
+        [FromQuery] int pageSize = 10)
+    {
+        if (string.IsNullOrWhiteSpace(term))
+        {
+            return Ok(new PagedApiResponse<ProductDto>
+            {
+                Data = new List<ProductDto>(), // Lista vazia
+                Pagination = new PaginationData { TotalCount = 0, TotalPages = 0, CurrentPage = 1, PageSize = pageSize }
+            });
+        }
+
+        var response = await _productService.SearchProductsByNameAsync(term, pageNumber, pageSize);
+        return Ok(response);
+    }
+
     [HttpPost]
     public async Task<ActionResult<ProductDto>> PostProdutos(CreateProductDto product)
     {

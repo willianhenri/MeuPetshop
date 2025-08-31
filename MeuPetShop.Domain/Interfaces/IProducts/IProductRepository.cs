@@ -13,4 +13,5 @@ public interface IProductRepository
     Task DeleteAsync(Product product);
     Task<IEnumerable<Product>> GetAllPagedAsync(int pageNumber, int pageSize);
     Task<int> CountAsync();
+    Task<(IEnumerable<Product> Products, int TotalCount)> SearchByNameAsync(string searchTerm, int pageNumber, int pageSize);
 }

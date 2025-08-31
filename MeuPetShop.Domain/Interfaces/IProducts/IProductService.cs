@@ -12,4 +12,5 @@ public interface IProductService
     Task<PagedApiResponse<ProductDto>> GetAllProductsAsync(int pageNumber, int pageSize);
     Task<ProductDto?> UpdateProductAsync(int id, UpdateProductDto productDto);
     Task<bool> DeleteProductAsync(int id);
+    Task<PagedApiResponse<ProductDto>> SearchProductsByNameAsync(string searchTerm, int pageNumber, int pageSize);
 }

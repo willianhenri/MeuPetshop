@@ -13,6 +13,7 @@ public class PetRepository : IPetRepository
     {
         _context = context;
     }
+
     public async Task AddAsync(Pet pet)
     {
         await _context.Pets.AddAsync(pet);
@@ -26,9 +27,7 @@ public class PetRepository : IPetRepository
 
     public async Task<IEnumerable<Pet>> GetAllByClientIdAsync(int clientId)
     {
-        return await _context.Pets
-            .Where(p => p.ClientId == clientId)
-            .ToListAsync();
+        return await _context.Pets.Where(p => p.ClientId == clientId).ToListAsync();
     }
 
     public async Task UpdateAsync(Pet pet)
@@ -41,5 +40,21 @@ public class PetRepository : IPetRepository
     {
         _context.Pets.Remove(pet);
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<int> CountAsync()
+    {
+        return await _context.Pets.CountAsync();
+    }
+
+    public async Task<(IEnumerable<Pet> Pets, int TotalCount)> GetAllAsync(int pageNumber, int pageSize)
+    {
+        var totalCount = await _context.Pets.CountAsync();
+        var pets = await _context.Pets
+            .OrderBy(p => p.Name)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+        return (pets, totalCount);
     }
 }

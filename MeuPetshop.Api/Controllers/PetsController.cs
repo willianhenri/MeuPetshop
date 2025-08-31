@@ -1,9 +1,11 @@
 ﻿using MeuPetShop.Domain.Dtos.ClientDtos;
 using MeuPetShop.Domain.Dtos.PetDtos;
 using MeuPetShop.Domain.Interfaces.IPets;
+using MeuPetShop.Domain.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuPetshop.Api.Controllers;
+
 [ApiController]
 [Route("api/[controller]")]
 public class PetsController : ControllerBase
@@ -15,8 +17,17 @@ public class PetsController : ControllerBase
         _petService = petService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<PagedApiResponse<PetDto>>> GetAllPets([FromQuery] int pageNumber = 1,
+        [FromQuery] int pageSize = 10)
+    {
+        var response = await _petService.GetAllPetsAsync(pageNumber, pageSize);
+        return Ok(response);
+    }
+
+
     [HttpGet("/api/clients/{clientId}/pets")]
-    public async Task<ActionResult<IEnumerable<ClientDto>>> GetAllClientsForPet(int clientId)
+    public async Task<ActionResult<IEnumerable<PetDto>>> GetAllPetsForClient(int clientId)
     {
         try
         {
@@ -35,7 +46,7 @@ public class PetsController : ControllerBase
         try
         {
             var newPet = await _petService.CreatePetForClientAsync(clientId, petDto);
-            return CreatedAtAction(nameof(GetPetById), new { clientId = clientId, petId = newPet.Id }, newPet);
+            return CreatedAtRoute("GetPetById", new { id = newPet.Id }, newPet);
         }
         catch (InvalidOperationException ex)
         {
@@ -43,27 +54,39 @@ public class PetsController : ControllerBase
         }
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetPetById")]
     public async Task<ActionResult<PetDto>> GetPetById(int id)
     {
         var pet = await _petService.GetPetByIdAsync(id);
-        if (pet == null) return NotFound();
+        if (pet == null)
+        {
+            return NotFound($"Pet com ID {id} não encontrado.");
+        }
+
         return Ok(pet);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdatePet(int id, [FromBody] UpdatePetDto petDto)
+    public async Task<ActionResult<PetDto>> UpdatePet(int id, [FromBody] UpdatePetDto petDto)
     {
-        var petUpdate = await _petService.UpdatePetAsync(id, petDto);
-        if (petUpdate == null) return NotFound();
-        return Ok(petUpdate);
+        var updatedPet = await _petService.UpdatePetAsync(id, petDto);
+        if (updatedPet == null)
+        {
+            return NotFound($"Pet com ID {id} não encontrado.");
+        }
+
+        return Ok(updatedPet);
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePet(int id)
     {
         var success = await _petService.DeletePetAsync(id);
-        if (!success) return NotFound("Pet not found");
+        if (!success)
+        {
+            return NotFound($"Pet com ID {id} não encontrado.");
+        }
+
         return NoContent();
     }
 }

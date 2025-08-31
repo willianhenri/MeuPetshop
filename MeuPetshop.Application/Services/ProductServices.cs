@@ -90,4 +90,28 @@ public class ProductServices : IProductService
         await _productRepository.DeleteAsync(productToDelete);
         return true;
     }
+
+    public async Task<PagedApiResponse<ProductDto>> SearchProductsByNameAsync(string searchTerm, int pageNumber, int pageSize)
+    {
+
+        var (products, totalCount) = await _productRepository.SearchByNameAsync(searchTerm, pageNumber, pageSize);
+
+        var productDtos = products.Select(p => new ProductDto(p.Id, p.Name, p.Description, p.Price, p.StockQuantity, p.DateAdded));
+
+        var response = new PagedApiResponse<ProductDto>
+        {
+            Data = productDtos,
+            Pagination = new PaginationData
+            {
+                CurrentPage = pageNumber,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize)
+            }
+        };
+
+        return response;
+    }
+
+    
 }
