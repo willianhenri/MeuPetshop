@@ -22,3 +22,4 @@ C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\M
 C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\refint\MeuPetShop.Domain.dll
 C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.pdb
 C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\ref\MeuPetShop.Domain.dll
+C:\Users\wh341\Documents\estudos\MeuPetshop\MeuPetShop.Domain\obj\Debug\net8.0\MeuPetShop.Domain.csproj.AssemblyReference.cache

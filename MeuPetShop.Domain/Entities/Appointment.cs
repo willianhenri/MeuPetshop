@@ -1,4 +1,6 @@
-﻿namespace MeuPetShop.Domain.Entities;
+﻿using MeuPetShop.Domain.Entities.User;
+
+namespace MeuPetShop.Domain.Entities;
 
 public class Appointment
 {
@@ -15,4 +17,7 @@ public class Appointment
     
     public int ClientId { get; set; }
     public Client Client { get; set; }
+    
+    public string ApplicationUserId { get; set; }
+    public ApplicationUser ApplicationUser { get; set; }
 }
