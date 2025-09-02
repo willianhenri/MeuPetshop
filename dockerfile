@@ -7,7 +7,7 @@ WORKDIR /source
 COPY *.sln .
 COPY MeuPetshop.Api/*.csproj MeuPetshop.Api/
 COPY MeuPetshop.Application/*.csproj MeuPetshop.Application/
-COPY MeuPetshop.Domain/*.csproj MeuPetshop.Domain/
+COPY MeuPetShop.Domain/*.csproj MeuPetShop.Domain/
 COPY MeuPetshop.Infrastructure/*.csproj MeuPetshop.Infrastructure/
 RUN dotnet restore
 
