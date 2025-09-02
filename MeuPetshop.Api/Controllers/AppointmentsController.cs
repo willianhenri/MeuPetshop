@@ -1,12 +1,14 @@
 ﻿using MeuPetShop.Domain.Dtos.AppointmentDto;
 using MeuPetShop.Domain.Interfaces.IAppointment;
 using MeuPetShop.Domain.Interfaces.IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuPetshop.Api.Controllers;
 
 [ApiController]
 [Route("api/appointments")]
+[Authorize]
 public class AppointmentsController : Controller
 {
     private readonly IAppointmentService _appointmentService;

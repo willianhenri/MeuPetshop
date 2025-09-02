@@ -1,12 +1,14 @@
 ﻿using MeuPetShop.Domain.Dtos.ClientDtos;
 using MeuPetShop.Domain.Interfaces.IClients;
 using MeuPetShop.Domain.Interfaces.IProducts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuPetshop.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ClientsController : ControllerBase
 {
     private readonly IClientService _clientService;
@@ -45,13 +47,16 @@ public class ClientsController : ControllerBase
         }
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     public async Task<ActionResult<ClientDto>> UpdateClient(int id, [FromBody] UpdateClientDto clientDto)
     {
         try
         {
             var updatedClient = await _clientService.UpdateClientAsync(id, clientDto);
-            if(updatedClient == null) return NotFound("Client not found");
+            if (updatedClient == null)
+            {
+                return NotFound("Client not found");
+            }
             return Ok(updatedClient);
         }
         catch (InvalidOperationException ex)
@@ -60,11 +65,15 @@ public class ClientsController : ControllerBase
         }
     }
 
-    [HttpDelete]
-    public async Task<ActionResult<ClientDto>> DeleteClient(int id)
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteClient(int id)
     {
         var success = await _clientService.DeleteClientAsync(id);
-        if (!success) return NotFound("Client not found");
+        if (!success)
+        {
+            return NotFound("Client not found");
+        }
         return NoContent();
     }
 }

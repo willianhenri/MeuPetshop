@@ -1,11 +1,13 @@
 ﻿using MeuPetShop.Domain.Dtos.ServiceDtos;
 using MeuPetShop.Domain.Interfaces.IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuPetshop.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ServicesController : ControllerBase
 {
     private readonly IServiceService _serviceService;
@@ -49,6 +51,7 @@ public class ServicesController : ControllerBase
     }
     
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteService(int id)
     {
         var success = await _serviceService.DeleteServiceAsync(id);

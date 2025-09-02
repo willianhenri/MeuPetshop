@@ -2,12 +2,14 @@
 using MeuPetShop.Domain.Dtos.PetDtos;
 using MeuPetShop.Domain.Interfaces.IPets;
 using MeuPetShop.Domain.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuPetshop.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class PetsController : ControllerBase
 {
     private readonly IPetService _petService;
@@ -79,6 +81,7 @@ public class PetsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeletePet(int id)
     {
         var success = await _petService.DeletePetAsync(id);

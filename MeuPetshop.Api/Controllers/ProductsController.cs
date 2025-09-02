@@ -4,6 +4,7 @@ using MeuPetShop.Domain.Entities;
 using MeuPetShop.Domain.Interfaces;
 using MeuPetShop.Domain.Interfaces.IProducts;
 using MeuPetShop.Domain.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ namespace MeuPetshop.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _productService;
@@ -77,6 +79,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<bool>> DeleteProdutoAsync(int id)
     {
         var produtoDeletado = await _productService.DeleteProductAsync(id);
