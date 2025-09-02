@@ -1,4 +1,4 @@
-#📖 Sobre o Projeto
+# 📖 Sobre o Projeto
 ##Meu Petshop API é um sistema de backend robusto para o gerenciamento completo de um pet shop. O projeto foi desenvolvido com foco em uma arquitetura limpa e escalável, seguindo as melhores práticas do desenvolvimento moderno de software. A API gerencia clientes, ##seus pets, os serviços oferecidos e o agendamento de atendimentos, com um sistema de autenticação e autorização baseado em perfis.
 
 ##Este projeto representa a fundação (o "cérebro") da aplicação, que será consumida por uma interface de frontend no futuro.
